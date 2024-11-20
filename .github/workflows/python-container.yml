@@ -1,0 +1,26 @@
+name: Run Python in Docker
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-python-container:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Configura el repositorio
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Ejecuta un contenedor de Python
+      - name: Run Python container
+        uses: addnab/docker-run-action@v3
+        with:
+          image: python:3.10
+          options: --rm
+          run: |
+            python --version
+            echo "Hello from a Python container!"
+            python -c "print('This is running inside Docker with Python!')"
