@@ -22,5 +22,5 @@ jobs:
           options: --rm
           run: |
             python --version
-            echo "Hello from a Python container!"
-            python -c "print('This is running inside Docker with Python!')"
+            echo "Contenedor de python"
+            python -c "print('Hola Dorx :), Ojala y gane el Real, no me repruebes')"
